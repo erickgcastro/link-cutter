@@ -3,21 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "db-generate": "npx prisma generate --schema=./src/infra/prisma/schema.prisma",
+    "db:local-migrate": "dotenv -e .env.local -- npx prisma migrate dev --schema=./src/infra/prisma/schema.prisma",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:start": "dotenv -e .env.example -- npx prisma migrate dev --schema=./src/infra/prisma/schema.prisma && next build && next start"
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@prisma/client": "^4.8.1",
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
+    "argon2": "^0.30.3",
+    "axios": "^1.2.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv-cli": "^6.0.0",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "next": "13.1.1",
+    "prisma": "^4.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-toastify": "^9.1.1",
+    "sharp": "^0.31.3",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }

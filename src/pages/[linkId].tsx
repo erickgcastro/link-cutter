@@ -68,7 +68,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
       },
     };
   } catch (error) {
-    console.log(error);
     return {
       redirect: {
         destination: '/',

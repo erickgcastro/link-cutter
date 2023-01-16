@@ -6,7 +6,12 @@ import cheerio from 'cheerio';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'POST':
-      const { data: html } = await axios.get(req.body.link);
+      const { data: html } = await axios.get(req.body.link, {
+        validateStatus: function (status) {
+          return status < 500; 
+        },
+      });
+
       const $ = cheerio.load(html);
 
       const title = $('title').text() || $('meta[property="og:title"]').attr('content');

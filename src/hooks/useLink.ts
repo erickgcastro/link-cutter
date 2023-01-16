@@ -16,7 +16,7 @@ const useLink = (id: string) => {
         password: passRef.current?.value,
       });
       toast.success('Success');
-      window.location.href = data.link
+      router.push(data.link);
     } catch (error: any) {
       console.error(error.message);
       toast.error('Invalid password');

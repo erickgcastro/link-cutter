@@ -67,7 +67,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
         permanent: true,
       },
     };
-  } catch (error) {
+  } catch (error: any) {
+    console.log(error.message);
     return {
       redirect: {
         destination: '/',

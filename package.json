@@ -6,7 +6,7 @@
     "db-generate": "npx prisma generate --schema=./src/infra/prisma/schema.prisma",
     "db:local-migrate": "dotenv -e .env.local -- npx prisma migrate dev --schema=./src/infra/prisma/schema.prisma",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate --schema=./src/infra/prisma/schema.prisma && next build",
     "start": "next start",
     "lint": "next lint",
     "build:start": "dotenv -e .env.example -- npx prisma migrate dev --schema=./src/infra/prisma/schema.prisma && next build && next start"

@@ -24,7 +24,7 @@ docker-compose up -d
 BASE_URL="http://000.000.0.00/"
 ```
 
-3. Run the project
+4. Run the project
 
 ```sh
 npm run build:start

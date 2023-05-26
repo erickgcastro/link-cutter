@@ -9,3 +9,18 @@ services:
       POSTGRES_USER: adm
       POSTGRES_PASSWORD: adm
       POSTGRES_DB: link-db
+    networks:
+      - link-cutter
+
+  client:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgresql://adm:adm@link-db:5432/link-db
+      - BASE_URL=http://localhost:3000
+    networks:
+      - link-cutter
+
+networks:
+  link-cutter:

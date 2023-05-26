@@ -1,33 +1,44 @@
-# Link Cutter
+# Projeto de Encurtador/Mascarador de Link
 
-## Getting Started
+Este é um projeto de um encurtador/mascarador de link, onde os usuários podem encurtar URLs longas. Além disso, o sistema permite que os usuários bloqueiem o acesso ao link encurtado com uma senha.
 
-1. Download the dependencies
+## Executando o Projeto Localmente
 
-```sh
-npm install
-# or
-yarn
-```
+Para executar o projeto localmente em sua máquina, siga as etapas abaixo:
 
-2. Create a database using Docker
+### Pré-requisitos
 
-```sh
-# Note: Make sure to have docker installed in your machine and properly configured
-docker-compose up -d
-```
+- Ter o Docker em sua máquina antes de prosseguir.
+- Certifique-se de ter a porta 3000 livre em sua máquina antes de prosseguir.
 
-3. Access .env and configure BASE_URL with your IPv4 address
+### Passos
 
-```sh
-# Note: Run "ipconfig" in your terminal to get ipv4
-BASE_URL="http://000.000.0.00/"
-```
+1. Clone o repositório do projeto para o seu ambiente de desenvolvimento:
 
-4. Run the project
+   ```bash
+   git clone https://github.com/erickgcastro/link-cutter.git
+   ```
 
-```sh
-npm run build:start
-# or
-yarn build:start
-```
+2. Navegue até o diretório raiz do projeto;
+
+3. Inicie o projeto usando o Docker Compose:
+
+   ```bash
+   docker compose up
+   ```
+
+   Isso iniciará os contêineres necessários para executar o frontend e o backend da plataforma;
+
+4. Após o processo de inicialização ser concluído, você poderá acessar a plataforma em seu navegador web através do seguinte endereço:
+
+   ```bash
+   http://localhost:3000
+   ```
+
+## Funcionalidades
+
+O encurtador/mascarador de link possui as seguintes funcionalidades:
+
+- Encurtamento de URLs: Os usuários podem fornecer uma URL longa e receber um link encurtado correspondente.
+- Bloqueio com senha: Os usuários podem definir uma senha para proteger o acesso ao link encurtado. Somente aqueles que conhecem a senha podem acessar o conteúdo.
+- Redirecionamento: Quando um usuário acessa o link encurtado, ele é redirecionado para a URL original correspondente.

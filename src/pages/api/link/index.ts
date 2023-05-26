@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     case 'POST':
       const { data: html } = await axios.get(req.body.link, {
         validateStatus: function (status) {
-          return status < 500; 
+          return status < 500;
         },
       });
 

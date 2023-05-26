@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 
-**/prisma/migrations
 example.txt
 # testing
 /coverage

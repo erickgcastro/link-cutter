@@ -52,7 +52,9 @@ const Link = ({ data }: { data: Link }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
-    const { data } = await axios.get(`${process.env.BASE_URL}api/link/${params!.linkId}`);
+    const { data } = await axios.get(
+      `${process.env.BASE_URL}/api/link/${params!.linkId}`
+    );
 
     if (data.isBlocked) {
       return {
